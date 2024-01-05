@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.2.12",
+    "process": "^0.11.10"
+  },
+  "name": "dynamiclogogenerator",
+  "description": "using node prompts this will generate a simple logo SVG",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/dannadlerp/dynamiclogogenerator.git"
+  },
+  "keywords": [
+    "logo",
+    "generator"
+  ],
+  "author": "Dan Nadler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannadlerp/dynamiclogogenerator/issues"
+  },
+  "homepage": "https://github.com/dannadlerp/dynamiclogogenerator#readme"
+}
