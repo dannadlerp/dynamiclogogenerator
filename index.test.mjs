@@ -1,4 +1,4 @@
-import {init, Square, Triangle, Circle} from "./index.mjs";
+import {init, Square, Circle, Triangle} from "./index.mjs";
 
 test('circle should generate a circle svg', () => { 
     const shape = new Circle();
