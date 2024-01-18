@@ -32,7 +32,7 @@ await inquirer
     },
     {
         name: 'shape',
-        type: 'checkbox',
+        type: 'list',
         choices: ['square','circle', 'triangle'],
         message: 'What shape would you prefer?',
     },
@@ -46,23 +46,29 @@ await inquirer
 
 .then(answers => { //assigns variables to each answer that is prompted
     
+    const shape = answers.shape;
+    let newShape;
     const text = answers.text;
     const textColour = answers.txtColour;
-    const shape = answers.shape;
     const shapeColour = answers.shapeColour;
-    if (shape === "square") {newShape = new Square();
-    } else if (shape === "triangle") {newShape = new Triangle();
-    } else if (shape === "circle") {newShape = new Circle();}
+
+    if (shape === "square") {newShape = new Square(text, shapeColour, textColour);
+    } else if (shape === "triangle") {newShape = new Triangle(text, shapeColour, textColour);
+    } else if (shape === "circle") {newShape = new Circle(text, shapeColour, textColour);}
     //const questions = [text, colour, shape];
-    //const jsonStringData = JSON.stringify(ShapeCode, null, 2);
-    fs.writeFileSync(`./${fileName}`, shapeCode); (err) =>  //must be 300x200px
-    //below creates an array with all answers so it can be displayed in the new file
-    //below uses JSON to turn the array from [2] (from node) into a string
+    newShape.render()
+    const jsonStringData = JSON.stringify(shapeCode, null, 2);
+    //fs.writeFileSync(`./${fileName}`, jsonStringData); (err) =>  //must be 300x200px
+    fs.writeFileSync(`./${fileName}`, JSON.parse(jsonStringData), (err) => {  //writes svg file  
+            if (err) {
+                console.error(err);
+            } else {
+                console.log('Success!');
+                console.log(`Generated ${fileName}`);   
+            }
+        });
     
-    //writes the svg file
-    err ? console.error(err) : console.log('Success!') //logs any errors
-    
-    console.log(`this is the variable:${shapeCode}`);
+    console.log(`this is the variable:${JSON.parse(jsonStringData)}`);
     console.log('Answers:', answers);
     console.log(`Generated ${fileName}`);
 })
