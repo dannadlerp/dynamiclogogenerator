@@ -11,7 +11,7 @@ class Triangle {
          this.txtColour = textColour;
     }
     
-
+    setColor(shapeColour) {this.shapeColour = shapeColour;}
     
     render() {
         const coordinates = "150,18 244,182 56,182"; //coordinates of triangle
@@ -58,4 +58,4 @@ class Circle {
         return shapeCode;
     }
 };
-export {Circle, Square, Triangle, shapeCode}
+export {Circle, Square, Triangle, setColor, shapeCode}

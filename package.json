@@ -5,7 +5,7 @@
   "main": "index.mjs",
   "type": "module",
   "scripts": {
-    "test": "run test"
+    "test": "jest"
   },
   "dependencies": {
     "chalk": "^5.3.0",
