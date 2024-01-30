@@ -2,7 +2,7 @@ import inquirer from "inquirer";
 import fs from "fs";
 import { argv } from "process";
 import jest from "jest";
-import { setColor, Circle, Square, Triangle, shapeCode} from "./shapes.mjs";
+import { Circle, Square, Triangle, shapeCode} from "./shapes.mjs";
 
 const init = async () => {
 

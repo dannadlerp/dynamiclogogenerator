@@ -11,7 +11,7 @@ class Triangle {
          this.txtColour = textColour;
     }
     
-    setColor(shapeColour) {this.shapeColour = shapeColour;}
+    setColor() {this.shapeColour = shapeColour;}
     
     render() {
         const coordinates = "150,18 244,182 56,182"; //coordinates of triangle
@@ -32,6 +32,8 @@ class Square {
         
     }
 
+    setColor() {this.shapeColour = shapeColour;}
+
     render() {
         shapeCode = `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">  //create code for generating shape with variables from input
         <rect x="45" y="45" width="200" height="200" stroke="black" fill="${this.shapeColour}" stroke-width="5"/>
@@ -48,7 +50,9 @@ class Circle {
             this.txtColour = textColour;
         
     }
-    
+
+    setColor() {this.shapeColour = shapeColour;}
+
     render() {
         
         shapeCode = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
@@ -58,4 +62,4 @@ class Circle {
         return shapeCode;
     }
 };
-export {Circle, Square, Triangle, setColor, shapeCode}
+export {Circle, Square, Triangle, shapeCode}
